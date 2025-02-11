@@ -1,0 +1,38 @@
+# 🌐 Angular build and dependencies
+/node_modules/
+/dist/
+/out-tsc/
+/tmp/
+*.log
+
+# 📦 Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 🚀 Environment and secrets
+src/environments/environment*.ts
+
+# 🌍 IDE / Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# 🏗️ Angular-specific files
+.angular/
+.nx/
+
+# 🔄 Cache and logs
+/.firebase/
+/.husky/_/
+/coverage/
+/*.cache
+/.eslintcache
+/.npm/
+/*.tsbuildinfo
+
+# ⚙️ Cypress & Jest
+cypress/screenshots/
+cypress/videos/
+jest.*
+coverage/
