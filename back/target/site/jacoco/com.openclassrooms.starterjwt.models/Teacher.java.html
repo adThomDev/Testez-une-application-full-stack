@@ -17,24 +17,24 @@ import java.time.LocalDateTime;
 <span class="nc" id="L17">@Data</span>
 @Accessors(chain = true)
 <span class="nc bnc" id="L19" title="All 14 branches missed.">@EqualsAndHashCode(of = {&quot;id&quot;})</span>
-<span class="nc" id="L20">@Builder</span>
+<span class="pc" id="L20">@Builder</span>
 <span class="fc" id="L21">@NoArgsConstructor</span>
-<span class="nc" id="L22">@AllArgsConstructor</span>
+<span class="fc" id="L22">@AllArgsConstructor</span>
 <span class="nc" id="L23">@ToString</span>
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-<span class="nc" id="L27">    private Long id;</span>
+<span class="fc" id="L27">    private Long id;</span>
 
     @NotBlank
     @Size(max = 20)
     @Column(name = &quot;last_name&quot;)
-<span class="nc" id="L32">    private String lastName;</span>
+<span class="fc" id="L32">    private String lastName;</span>
 
     @NotBlank
     @Size(max = 20)
     @Column(name = &quot;first_name&quot;)
-<span class="nc" id="L37">    private String firstName;</span>
+<span class="fc" id="L37">    private String firstName;</span>
 
     @CreatedDate
     @Column(name = &quot;created_at&quot;, updatable = false)
