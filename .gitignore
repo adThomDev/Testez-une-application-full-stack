@@ -1,0 +1,72 @@
+# 🌐 Angular build and dependencies
+/front/node_modules/
+/front/dist/
+/front/out-tsc/
+/front/tmp/
+*.log
+
+# 📦 Package manager files
+/front/package-lock.json
+/front/yarn.lock
+/front/pnpm-lock.yaml
+
+# 🚀 Environment and secrets
+/front/src/environments/environment*.ts
+
+# 🌍 IDE / Editor files
+/front/.vscode/
+/front/.idea/
+/front/*.sublime-workspace
+
+# 🏗️ Angular-specific files
+/front/.angular/
+/front/.nx/
+
+# 🔄 Cache and logs
+/front/.firebase/
+/front/.husky/_/
+/front/coverage/
+/front/*.cache
+/front/.eslintcache
+/front/.npm/
+/front/*.tsbuildinfo
+
+# ⚙️ Cypress & Jest
+/front/cypress/screenshots/
+/front/cypress/videos/
+/front/jest.*
+/front/coverage/
+
+# Maven specific
+/back/target/
+.back/pom.xml.tag
+/back/pom.xml.releaseBackup
+/back/pom.xml.versionsBackup
+/back/pom.xml.next
+/back/release.properties
+/back/dependency-reduced-pom.xml
+/back/buildNumber.properties
+/back/.mvn/timing.properties
+/back/.mvn/wrapper/maven-wrapper.jar
+/back/.mvn/wrapper/maven-wrapper.properties
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+out/
+
+# Logs
+logs/
+*.log
+log/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Application-specific
+/back/application.properties
+/back/application.yml
+.env
+
