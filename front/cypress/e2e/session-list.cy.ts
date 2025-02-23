@@ -1,9 +1,11 @@
 describe("Sessions Page", () => {
   beforeEach(() => {
+    //GIVEN : a logged in user and sessions fetched, WHEN arriving on the sessions page
     cy.login();
   });
 
   it("should display the correct sessions", () => {
+    //THEN : it should display these sessions
     cy.contains("sessionName").should("be.visible");
     cy.contains("sessionName2").should("be.visible");
 

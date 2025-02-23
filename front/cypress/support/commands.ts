@@ -5,6 +5,7 @@ declare namespace Cypress {
 }
 
 Cypress.Commands.add("login", () => {
+  //GIVEN : an user and some sessions
   cy.intercept("POST", "/api/auth/login", {
     body: {
       token: "jwtToken",
@@ -46,11 +47,14 @@ Cypress.Commands.add("login", () => {
     ]
   ).as("getSessionsInfo");
 
+  //WHEN : logging in on the login page
   cy.visit("/login");
   cy.get("input[formControlName=email]").type("yoga@studio.com");
   cy.get("input[formControlName=password]").type(
     `${"test!1234"}{enter}{enter}`
   );
+
+  //THEN : it should redirect to the sessions page and fetch the sessions
   cy.url().should("include", "/sessions");
   cy.wait("@getSessionsInfo");
 });
