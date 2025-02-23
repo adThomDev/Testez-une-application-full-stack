@@ -17,19 +17,34 @@ Cypress.Commands.add("login", () => {
     },
   }).as("loggingIn");
 
-  cy.intercept("GET", "/api/session", {
-    body: {
-      id: 1,
-      name: "sessionName",
-      date: "2020-01-01",
-      teacher_id: 2,
-      description: "sessionDescription",
-      users: [],
-      createdAt: "2025-01-01",
-      updatedAt: "2025-01-01"
+  cy.intercept(
+    {
+      method: "GET",
+      url: "/api/session",
     },
-  }).as("getSessionInfo");
-  
+    [
+      {
+        id: 1,
+        name: "sessionName",
+        date: "2020-01-01",
+        teacher_id: 1,
+        description: "sessionDescription",
+        users: [],
+        createdAt: "2025-01-01",
+        updatedAt: "2025-01-01",
+      },
+      {
+        id: 2,
+        name: "sessionName2",
+        date: "2020-02-02",
+        teacher_id: 2,
+        description: "sessionDescription2",
+        users: [],
+        createdAt: "2025-02-01",
+        updatedAt: "2025-02-01"
+      }
+    ]
+  ).as("getSessionsInfo");
 
   cy.visit("/login");
   cy.get("input[formControlName=email]").type("yoga@studio.com");
@@ -37,8 +52,11 @@ Cypress.Commands.add("login", () => {
     `${"test!1234"}{enter}{enter}`
   );
   cy.url().should("include", "/sessions");
-  cy.wait('@getSessionInfo');
+  cy.wait("@getSessionsInfo");
 });
+
+
+
 
 // ***********************************************
 // This example namespace declaration will help

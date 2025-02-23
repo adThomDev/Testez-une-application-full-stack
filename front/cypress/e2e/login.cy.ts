@@ -25,3 +25,5 @@ describe('Login spec', () => {
     cy.url().should('include', '/sessions')
   })
 });
+
+//TODO : logging si non-admin
