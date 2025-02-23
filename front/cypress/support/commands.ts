@@ -1,3 +1,45 @@
+declare namespace Cypress {
+  interface Chainable {
+    login(): Chainable<void>;
+  }
+}
+
+Cypress.Commands.add("login", () => {
+  cy.intercept("POST", "/api/auth/login", {
+    body: {
+      token: "jwtToken",
+      type: "Bearer",
+      id: 1,
+      username: "yoga@studio.com",
+      firstName: "Admin",
+      lastName: "Admin",
+      admin: true,
+    },
+  }).as("loggingIn");
+
+  cy.intercept("GET", "/api/session", {
+    body: {
+      id: 1,
+      name: "sessionName",
+      date: "2020-01-01",
+      teacher_id: 2,
+      description: "sessionDescription",
+      users: [],
+      createdAt: "2025-01-01",
+      updatedAt: "2025-01-01"
+    },
+  }).as("getSessionInfo");
+  
+
+  cy.visit("/login");
+  cy.get("input[formControlName=email]").type("yoga@studio.com");
+  cy.get("input[formControlName=password]").type(
+    `${"test!1234"}{enter}{enter}`
+  );
+  cy.url().should("include", "/sessions");
+  cy.wait('@getSessionInfo');
+});
+
 // ***********************************************
 // This example namespace declaration will help
 // with Intellisense and code completion in your
@@ -41,3 +83,4 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+// cypress/support/commands.ts
