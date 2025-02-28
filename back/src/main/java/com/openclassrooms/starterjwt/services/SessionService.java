@@ -76,11 +76,3 @@ public class SessionService {
         this.sessionRepository.save(session);
     }
 }
-//TODO : bad one
-//  @Test
-//  void testParticipateSuccess() {
-//    when(sessionRepository.findById(1L)).thenReturn(Optional.of(session));
-//    when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-//    sessionService.participate(1L, 1L);
-//    verify(sessionRepository, times(1)).save(session);
-//  }
