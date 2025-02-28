@@ -26,7 +26,7 @@ Cypress.Commands.add("login", () => {
     [
       {
         id: 1,
-        name: "sessionname",
+        name: "sessionName1",
         date: "2020-01-01",
         teacher_id: 1,
         description: "sessionDescription",
