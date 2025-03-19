@@ -17,7 +17,7 @@
 
 ## Summary
 
-This proect contains both the frontend and backend code for an app called Yoga, which allows users to register and login onto an app to manage yoga sessions.
+This project contains both the frontend and backend code for an app called Yoga, which allows users to register and login onto an app to manage yoga sessions.
 
 # Ressources
 
@@ -25,7 +25,7 @@ This proect contains both the frontend and backend code for an app called Yoga, 
 
 An SQL script to populate the database is available at `ressources/sql/script.sql`
 
-Among other entries, It'll generate a default admin account :
+Among other entries, it'll generate a default admin account :
 - login: yoga@studio.com
 - password: test!1234
 
